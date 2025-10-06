@@ -26,7 +26,7 @@
       <widget class="ActionButton" name="actionbutton_3">
        <property name="geometry">
         <rect>
-         <x>590</x>
+         <x>540</x>
          <y>30</y>
          <width>251</width>
          <height>171</height>
@@ -100,8 +100,8 @@ image: url(/home/cnc/wire/src/wire/ui/rs/off_toggle_1.png);
       <widget class="ActionButton" name="ref_all_button_6">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>380</y>
+         <x>50</x>
+         <y>340</y>
          <width>125</width>
          <height>125</height>
         </rect>
@@ -153,9 +153,9 @@ image: url(/home/cnc/.iMG/CNC_Home_pressed.png);
       <widget class="DROLineEdit" name="dro_entry_main_x_3">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>10</x>
          <y>150</y>
-         <width>400</width>
+         <width>500</width>
          <height>200</height>
         </rect>
        </property>
@@ -229,8 +229,8 @@ color: rgb(56, 54, 57);
       <widget class="ActionButton" name="EStoper">
        <property name="geometry">
         <rect>
-         <x>598</x>
-         <y>308</y>
+         <x>548</x>
+         <y>248</y>
          <width>256</width>
          <height>256</height>
         </rect>
@@ -256,8 +256,8 @@ image: url(/home/cnc/wire/src/wire/ui/rs/E_Stop_Inac.png);
       <widget class="StatusLED" name="statusled_8">
        <property name="geometry">
         <rect>
-         <x>590</x>
-         <y>300</y>
+         <x>540</x>
+         <y>240</y>
          <width>270</width>
          <height>270</height>
         </rect>
