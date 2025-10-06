@@ -26,10 +26,10 @@
       <widget class="ActionButton" name="actionbutton_2">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>60</y>
+         <x>30</x>
+         <y>20</y>
          <width>225</width>
-         <height>25</height>
+         <height>191</height>
         </rect>
        </property>
        <property name="text">
@@ -45,10 +45,10 @@
       <widget class="ActionButton" name="actionbutton">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>70</y>
+         <x>270</x>
+         <y>20</y>
          <width>225</width>
-         <height>25</height>
+         <height>191</height>
         </rect>
        </property>
        <property name="text">
@@ -59,6 +59,261 @@
        </property>
        <property name="actionName" stdset="0">
         <string>machine.power.toggle</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="actionbutton_3">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>40</y>
+         <width>251</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Run</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>program.run</string>
+       </property>
+      </widget>
+      <widget class="ActionCheckBox" name="stop">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>268</y>
+         <width>155</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>155</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>145</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>120</width>
+         <height>37</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">ActionCheckBox::indicator:checked {
+
+image: url(/home/cnc/.iMG/CNC_on_toggle.png);
+
+}
+
+ActionCheckBox::indicator:unchecked {
+image: url(/home/cnc/.iMG/CNC_off_toggle.png);
+}
+
+
+
+</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.power.toggle</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="ref_all_button_6">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>340</y>
+         <width>125</width>
+         <height>125</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>125</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>125</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ref_all_button_6 {
+font: 25pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/.iMG/CNC_Home.png);
+}
+
+#ref_all_button_6:pressed {
+image: url(/home/cnc/.iMG/CNC_Home_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>HOME</string>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'HOMED' if ch[0] else 'HOME'&quot;, &quot;name&quot;: &quot;reference_all&quot;}]</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.home.all</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>350</y>
+         <width>60</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label_26 {
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/.iMG//CNC_Ref_Sprite.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled_7">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>350</y>
+         <width>60</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="diameter">
+        <number>84</number>
+       </property>
+       <property name="color">
+        <color>
+         <red>126</red>
+         <green>219</green>
+         <blue>11</blue>
+        </color>
+       </property>
+       <property name="state">
+        <bool>false</bool>
+       </property>
+       <property name="flashRate">
+        <number>500</number>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}]</string>
+       </property>
+      </widget>
+      <widget class="DROLineEdit" name="dro_entry_main_x_3">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>240</y>
+         <width>371</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>400</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Digital Display</family>
+         <pointsize>70</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+	border-color: rgb(164, 0, 0);
+}</string>
+       </property>
+       <property name="text">
+        <string>     0.000</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="referenceType" stdset="0">
+        <number>1</number>
+       </property>
+       <property name="axisNumber" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="inchFormat" stdset="0">
+        <string>%9.3f</string>
+       </property>
+       <property name="millimeterFormat" stdset="0">
+        <string>%10.3f</string>
+       </property>
+       <property name="degreeFormat" stdset="0">
+        <string>%10.2f</string>
+       </property>
+       <property name="latheMode" stdset="0">
+        <number>1</number>
        </property>
       </widget>
      </widget>
@@ -104,6 +359,21 @@
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>qtpyvcp.widgets.button_widgets.action_checkbox</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusLED</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.status_led</header>
+  </customwidget>
+  <customwidget>
+   <class>DROLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
   </customwidget>
  </customwidgets>
  <resources/>
