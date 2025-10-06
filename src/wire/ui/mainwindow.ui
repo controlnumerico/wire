@@ -42,30 +42,11 @@
         <string>machine.estop.toggle</string>
        </property>
       </widget>
-      <widget class="ActionButton" name="actionbutton">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>20</y>
-         <width>225</width>
-         <height>191</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Power</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-       <property name="actionName" stdset="0">
-        <string>machine.power.toggle</string>
-       </property>
-      </widget>
       <widget class="ActionButton" name="actionbutton_3">
        <property name="geometry">
         <rect>
-         <x>520</x>
-         <y>40</y>
+         <x>540</x>
+         <y>30</y>
          <width>251</width>
          <height>171</height>
         </rect>
@@ -83,8 +64,8 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>268</y>
+         <x>300</x>
+         <y>100</y>
          <width>155</width>
          <height>45</height>
         </rect>
@@ -188,74 +169,12 @@ image: url(/home/cnc/.iMG/CNC_Home_pressed.png);
         <string>machine.home.axis:x</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_26">
-       <property name="geometry">
-        <rect>
-         <x>580</x>
-         <y>350</y>
-         <width>60</width>
-         <height>60</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>60</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">#label_26 {
-background-color: transparent;
-background: none;
-border:none;
-image: url(/home/cnc/.iMG//CNC_Ref_Sprite.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="StatusLED" name="statusled_7">
-       <property name="geometry">
-        <rect>
-         <x>490</x>
-         <y>350</y>
-         <width>60</width>
-         <height>60</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>60</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="diameter">
-        <number>84</number>
-       </property>
-       <property name="color">
-        <color>
-         <red>126</red>
-         <green>219</green>
-         <blue>11</blue>
-        </color>
-       </property>
-       <property name="state">
-        <bool>false</bool>
-       </property>
-       <property name="flashRate">
-        <number>500</number>
-       </property>
-       <property name="rules" stdset="0">
-        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}]</string>
-       </property>
-      </widget>
       <widget class="DROLineEdit" name="dro_entry_main_x_3">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>240</y>
-         <width>371</width>
+         <x>380</x>
+         <y>340</y>
+         <width>400</width>
          <height>70</height>
         </rect>
        </property>
@@ -316,6 +235,16 @@ color: rgb(56, 54, 57);
         <number>1</number>
        </property>
       </widget>
+      <widget class="HalCheckBox" name="halcheckbox">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>270</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -366,16 +295,33 @@ color: rgb(56, 54, 57);
    <header>qtpyvcp.widgets.button_widgets.action_checkbox</header>
   </customwidget>
   <customwidget>
-   <class>StatusLED</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.status_led</header>
-  </customwidget>
-  <customwidget>
    <class>DROLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
   </customwidget>
+  <customwidget>
+   <class>HalCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>qtpyvcp.widgets.hal_widgets.hal_checkbox</header>
+  </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>halcheckbox</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>ref_all_button_6</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>411</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
