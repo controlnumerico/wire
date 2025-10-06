@@ -23,29 +23,10 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="ActionButton" name="actionbutton_2">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>20</y>
-         <width>225</width>
-         <height>191</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>E-Stop</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-       <property name="actionName" stdset="0">
-        <string>machine.estop.toggle</string>
-       </property>
-      </widget>
       <widget class="ActionButton" name="actionbutton_3">
        <property name="geometry">
         <rect>
-         <x>540</x>
+         <x>590</x>
          <y>30</y>
          <width>251</width>
          <height>171</height>
@@ -64,10 +45,10 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>100</y>
-         <width>155</width>
-         <height>45</height>
+         <x>30</x>
+         <y>40</y>
+         <width>300</width>
+         <height>96</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -78,8 +59,8 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>155</width>
-         <height>45</height>
+         <width>300</width>
+         <height>96</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -100,12 +81,12 @@
        <property name="styleSheet">
         <string notr="true">ActionCheckBox::indicator:checked {
 
-image: url(/home/cnc/.iMG/CNC_on_toggle.png);
+image: url(/home/cnc/wire/src/wire/ui/rs/on_toggle_1.png);
 
 }
 
 ActionCheckBox::indicator:unchecked {
-image: url(/home/cnc/.iMG/CNC_off_toggle.png);
+image: url(/home/cnc/wire/src/wire/ui/rs/off_toggle_1.png);
 }
 
 
@@ -119,8 +100,8 @@ image: url(/home/cnc/.iMG/CNC_off_toggle.png);
       <widget class="ActionButton" name="ref_all_button_6">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>340</y>
+         <x>70</x>
+         <y>380</y>
          <width>125</width>
          <height>125</height>
         </rect>
@@ -172,28 +153,28 @@ image: url(/home/cnc/.iMG/CNC_Home_pressed.png);
       <widget class="DROLineEdit" name="dro_entry_main_x_3">
        <property name="geometry">
         <rect>
-         <x>380</x>
-         <y>340</y>
+         <x>130</x>
+         <y>150</y>
          <width>400</width>
-         <height>70</height>
+         <height>200</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>100</width>
-         <height>35</height>
+         <width>400</width>
+         <height>200</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>400</width>
-         <height>70</height>
+         <width>500</width>
+         <height>200</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Digital Display</family>
-         <pointsize>70</pointsize>
+         <pointsize>100</pointsize>
          <weight>75</weight>
          <italic>false</italic>
          <bold>true</bold>
@@ -245,6 +226,72 @@ color: rgb(56, 54, 57);
         </rect>
        </property>
       </widget>
+      <widget class="ActionButton" name="EStoper">
+       <property name="geometry">
+        <rect>
+         <x>598</x>
+         <y>308</y>
+         <width>256</width>
+         <height>256</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#EStoper {
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/wire/src/wire/ui/rs/E_Stop_Act.png);
+}
+
+#EStoper:pressed {
+ 
+image: url(/home/cnc/wire/src/wire/ui/rs/E_Stop_Inac.png);
+}</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.estop.toggle</string>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled_8">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>300</y>
+         <width>270</width>
+         <height>270</height>
+        </rect>
+       </property>
+       <property name="diameter">
+        <number>270</number>
+       </property>
+       <property name="color">
+        <color>
+         <red>245</red>
+         <green>194</green>
+         <blue>17</blue>
+        </color>
+       </property>
+       <property name="state">
+        <bool>false</bool>
+       </property>
+       <property name="flashing">
+        <bool>false</bool>
+       </property>
+       <property name="flashRate">
+        <number>300</number>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_state?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Flashing&quot;, &quot;expression&quot;: &quot;ch[0] == 'E-Stop'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}, {&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'E-Stop'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_state?text&quot;, &quot;trigger&quot;: true}]}]</string>
+       </property>
+      </widget>
+      <zorder>actionbutton_3</zorder>
+      <zorder>stop</zorder>
+      <zorder>ref_all_button_6</zorder>
+      <zorder>dro_entry_main_x_3</zorder>
+      <zorder>halcheckbox</zorder>
+      <zorder>statusled_8</zorder>
+      <zorder>EStoper</zorder>
      </widget>
     </item>
    </layout>
@@ -293,6 +340,11 @@ color: rgb(56, 54, 57);
    <class>ActionCheckBox</class>
    <extends>QCheckBox</extends>
    <header>qtpyvcp.widgets.button_widgets.action_checkbox</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusLED</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.status_led</header>
   </customwidget>
   <customwidget>
    <class>DROLineEdit</class>
