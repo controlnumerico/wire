@@ -26,11 +26,19 @@
       <widget class="ActionButton" name="actionbutton_3">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>340</x>
          <y>20</y>
-         <width>211</width>
-         <height>91</height>
+         <width>180</width>
+         <height>180</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>DejaVu Sans</family>
+         <pointsize>40</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Run</string>
