@@ -1,0 +1,38 @@
+[build-system]
+requires = ["poetry-core", "versioneer[toml]"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "wire"
+authors = [
+  "John Doe <doe.john@example.com>"
+]
+description = "Wire - A QtPyVCP based Virtual Control Panel for LinuxCNC"
+readme = "README.md"
+version = "0.0.1"
+
+packages = [
+    { include = "wire", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.scripts]
+wire = "wire:main"
+
+[tool.poetry.plugins]
+
+[tool.poetry.plugins."qtpyvcp.vcp"]
+wire = "wire"
+
+[tool.poetry.plugins."qtpyvcp.widgets"]
+
+[tool.versioneer]
+VCS = "git"
+style = "pep440"
+versionfile_source = "src/wire/_version.py"
+versionfile_build = "wire/_version.py"
+tag_prefix = ""
+parentdir_prefix = ""
