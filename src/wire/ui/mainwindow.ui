@@ -100,7 +100,7 @@ image: url(/home/cnc/wire/src/wire/ui/rs/off_toggle_1.png);
       <widget class="ActionButton" name="ref_all_button_6">
        <property name="geometry">
         <rect>
-         <x>530</x>
+         <x>520</x>
          <y>0</y>
          <width>300</width>
          <height>300</height>
@@ -153,7 +153,7 @@ image: url(/home/cnc/wire/src/wire/ui/rs/Home_Down.png);
       <widget class="DROLineEdit" name="dro_entry_main_x_3">
        <property name="geometry">
         <rect>
-         <x>270</x>
+         <x>260</x>
          <y>270</y>
          <width>550</width>
          <height>200</height>
